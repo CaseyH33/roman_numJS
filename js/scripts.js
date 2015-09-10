@@ -5,10 +5,17 @@ var romanize = function(num) {
     var number_list = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
     var output = "";
 
-    if(num <= 0 || num >= 4000) {
+    //Easter Egg
+    if(num === 10000) {
+        while(num > 0) {
+            output += "toga! ";
+            num--;
+        }
+
+    //Actual function to have the numbers convert
+    } else if(num <= 0 || num >= 4000) {
         output = "invalid number";
     } else {
-
         for (var i = 0; i <= roman_numerals.length; i++) {
             while(num >= number_list[i]) {
                 output += roman_numerals[i];
